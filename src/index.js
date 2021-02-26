@@ -1,8 +1,12 @@
 const constants = require("./Constants");
 const cron = require("node-cron");
 const puppeteer = require("puppeteer");
+const basePath = process.cwd();
+console.log(basePath);
+const CRX_PATH = `${basePath}/extensions/TradeRocket/extension_1_0_7_0`;
 
-cron.schedule(
+console.log("Running ...");
+var task = cron.schedule(
   `00 ${constants.startTime[1]} ${constants.startTime[0]} * * *`,
   async () => {
     console.log(
@@ -13,7 +17,12 @@ cron.schedule(
     );
     const browser = await puppeteer.launch({
       headless: false,
-      executablePath: constants.ChromePath,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        `--disable-extensions-except=${CRX_PATH}`,
+        `--load-extension=${CRX_PATH}`,
+      ],
     });
     const page = await browser.newPage();
     await page.setViewport({ width: 1366, height: 768 });
@@ -49,3 +58,23 @@ cron.schedule(
     browser.close();
   }
 );
+
+function exitHandler(options, exitCode) {
+  task.stop();
+  if (options.cleanup) console.log("clean");
+  if (exitCode || exitCode === 0) console.log(exitCode);
+  if (options.exit) process.exit();
+}
+
+//do something when app is closing
+process.on("exit", exitHandler.bind(null, { cleanup: true }));
+
+//catches ctrl+c event
+process.on("SIGINT", exitHandler.bind(null, { exit: true }));
+
+// catches "kill pid" (for example: nodemon restart)
+process.on("SIGUSR1", exitHandler.bind(null, { exit: true }));
+process.on("SIGUSR2", exitHandler.bind(null, { exit: true }));
+
+//catches uncaught exceptions
+process.on("uncaughtException", exitHandler.bind(null, { exit: true }));
