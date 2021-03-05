@@ -1,4 +1,4 @@
-const constants = require("./Constants");
+const constants = require("../../Config");
 const cron = require("node-cron");
 const puppeteer = require("puppeteer");
 const basePath = process.cwd();

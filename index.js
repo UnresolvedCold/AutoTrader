@@ -1,4 +1,4 @@
-const LoginStreak = require("./LoginStreak");
+const LoginStreak = require("./src/Logins/LoginStreak");
 
 console.clear();
 console.log("Running ...");
