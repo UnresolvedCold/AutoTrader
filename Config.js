@@ -11,5 +11,5 @@ module.exports = {
     return ti > 0 ? ti : 100000;
   },
   gitSyncTime: ['*', '*/1'],
-  gitBranch: "AWS",
+  gitBranch: "TestGithub",
 };

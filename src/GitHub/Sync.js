@@ -10,7 +10,7 @@ const Sync = () => {
       if (!shell.which("git")) {
         shell.echo("Git not found.");
       } else {
-        var res = shell.exec("git pull origin TestGithub");
+        var res = shell.exec(`git pull origin ${Config.gitBranch}`);
 
         if (!res.includes("Already up to date")) {
           let today = new Date().toLocaleDateString();
