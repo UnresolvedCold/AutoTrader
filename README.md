@@ -14,20 +14,53 @@ Requirements/Tools Used-
 
 1. Install yarn
 
-   > `npm install -g yarn`
+   > npm install -g yarn
 
 1. Clone the repository to your AWS server.
 
-   > `git clone ...`
+   > git clone https://github.com/UnresolvedCold/AutoTrader.git
 
 1. Install all the rquired packages
 
-   > `yarn`
+   > yarn
 
-1. Change the required configs in ['./src/constants.js'](./src/constants.js)
+1. Add Environment variables as mentioned in './src/Constants.js'. Guide on how to add environment variables can be found [here](https://medium.com/@kapilgorve/set-environment-variable-in-windows-and-wsl-linux-in-terminal-c5e11138e807).
+
+   - On Windows
+     <code>
+     <br />
+     setx AutoTradePuppet_Name="Your name in quotes" /M
+     <br />
+     setx AutoTradePuppet_Id="Your Id in quotes" /M
+     <br />
+     setx AutoTradePuppet_Password="Your password in quotes" /M
+     <br />
+     setx AutoTradePuppet_Pin="Your pin in quotes" /M
+     <br />
+     </code>
+   - On Linux
+
+     <code>
+     $ sudo gedit ~/.bashrc
+     <br/><br/>
+     </code>
+
+     Add the following lines to the end of the file and save.
+     <code>
+     <br/>
+     export AutoTradePuppet_Name="Your name in quotes"
+     <br/>
+     export AutoTradePuppet_Id="Your Id in quotes"
+     <br/>
+     export AutoTradePuppet_Password="Your password in quotes"
+     <br/>
+     export AutoTradePuppet_Pin="Your pin in quotes"
+     </code>
+
+     Note - Adding security configurations like this is compromisable if there is a breach in the system.
 
 1. Run the server
-    >`yarn start`
+   > `yarn start`
 
 ## Disclaimer
 
