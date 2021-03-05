@@ -5,7 +5,7 @@ const config = require("../../Config");
 
 const Sync = () => {
   return cron.schedule(
-    `* ${Config.gitSyncTime[1]} ${Config.gitSyncTime[0]} * * *`,
+    `0 ${Config.gitSyncTime[1]} ${Config.gitSyncTime[0]} * * *`,
     async () => {
       if (!shell.which("git")) {
         shell.echo("Git not found.");
