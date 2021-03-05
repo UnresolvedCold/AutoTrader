@@ -10,6 +10,7 @@ const Sync = () => {
       if (!shell.which("git")) {
         shell.echo("Git not found.");
       } else {
+        shell.exec("git clean -n -f -d");
         var res = shell.exec("git pull origin TestGithub");
         shell.echo(res);
       }
