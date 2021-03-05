@@ -10,6 +10,6 @@ module.exports = {
     var ti = (e[0] * 60 + e[1] - s[0] * 60 - s[1]) * 60 * 1000;
     return ti > 0 ? ti : 100000;
   },
-  gitSyncTime: [3, 36],
+  gitSyncTime: [3, 50],
   gitBranch: "AWS",
 };
