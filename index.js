@@ -1,8 +1,14 @@
+const Github = require("./src/GitHub/Sync");
 const LoginStreak = require("./src/Logins/LoginStreak");
 
 console.clear();
 console.log("Running ...");
-var tasks = [LoginStreak.Login()];
+
+// List of cronjobs
+var tasks = [
+  Github.Sync(), 
+ // LoginStreak.Login()
+];
 
 // Call when app stops
 function exitHandler(options, exitCode) {

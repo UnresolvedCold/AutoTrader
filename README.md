@@ -14,15 +14,15 @@ Requirements/Tools Used-
 
 1. Install yarn
 
-   > `npm install -g yarn`
+   > npm install -g yarn
 
 1. Clone the repository to your AWS server.
 
-   > `git clone ...`
+   > git clone https://github.com/UnresolvedCold/AutoTrader.git
 
 1. Install all the rquired packages
 
-   > `yarn`
+   > yarn
 
 1. Add Environment variables as mentioned in './src/Constants.js'. Guide on how to add environment variables can be found [here](https://medium.com/@kapilgorve/set-environment-variable-in-windows-and-wsl-linux-in-terminal-c5e11138e807).
 
