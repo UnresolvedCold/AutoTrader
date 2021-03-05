@@ -11,7 +11,15 @@ const Sync = () => {
         shell.echo("Git not found.");
       } else {
         var res = shell.exec("git pull origin TestGithub");
-        shell.echo(res);
+        //shell.echo(res);
+
+        if (!res.includes("Already up to date")) {
+          let today = new Date().toLocaleDateString();
+          let branch = shell.exec("git branch");
+          shell.echo(`Updated ${branch} on ${today}`);
+        } else {
+          shell.echo("No need to change");
+        }
       }
     }
   );
