@@ -7,7 +7,7 @@ console.log("Running ...");
 // List of cronjobs
 var tasks = [
   Github.Sync(), 
- // LoginStreak.Login()
+  LoginStreak.Login()
 ];
 
 // Call when app stops
