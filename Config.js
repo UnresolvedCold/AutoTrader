@@ -11,5 +11,5 @@ module.exports = {
     return ti > 0 ? ti : 100000;
   },
   gitSyncTime: [0, 0],  // Ensure the update time and working hours dont clash
-  gitBranch: "TestGithub",
+  gitBranch: "AWS",
 };
