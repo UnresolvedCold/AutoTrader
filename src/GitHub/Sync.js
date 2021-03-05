@@ -1,7 +1,6 @@
 const cron = require("node-cron");
 const shell = require("shelljs");
 const Config = require("../../Config");
-const config = require("../../Config");
 
 const Sync = () => {
   return cron.schedule(
