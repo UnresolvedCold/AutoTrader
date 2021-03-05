@@ -14,10 +14,8 @@ const Sync = () => {
 
         if (!res.includes("Already up to date")) {
           let today = new Date().toLocaleDateString();
-          let branch = shell.exec("git branch");
-          shell.echo(`Updated ${branch} on ${today}`);
-        } else {
-          shell.echo("No need to change");
+          shell.exec('yarn');
+          shell.echo(`Updated on ${today}`);
         }
       }
     }
