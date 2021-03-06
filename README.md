@@ -10,57 +10,48 @@ Requirements/Tools Used-
 
 ## How to start
 
-1. Install npm on ASW server from [here](https://www.npmjs.com/get-npm).
+```bash
+   npm install -g yarn  # Install yarn
 
-1. Install yarn
+   # Now download the repository using the below command
+   git clone --branch AWS https://github.com/UnresolvedCold/AutoTrader.git
 
-   > npm install -g yarn
+   yarn  # Install all the required modules
+```
 
-1. Clone the repository to your AWS server.
+Add Environment variables as mentioned in './src/Constants.js'. Guide on how to add environment variables can be found [here](https://medium.com/@kapilgorve/set-environment-variable-in-windows-and-wsl-linux-in-terminal-c5e11138e807).
 
-   > git clone https://github.com/UnresolvedCold/AutoTrader.git
+- On Windows
 
-1. Install all the rquired packages
+```bash
+   # Open command prompt and type the following
 
-   > yarn
+   setx AutoTradePuppet_Name="Your name in quotes" /M
+   setx AutoTradePuppet_Id="Your Id in quotes" /M
+   setx AutoTradePuppet_Password="Your password in quotes" /M
+   setx AutoTradePuppet_Pin="Your pin in quotes" /M
+```
 
-1. Add Environment variables as mentioned in './src/Constants.js'. Guide on how to add environment variables can be found [here](https://medium.com/@kapilgorve/set-environment-variable-in-windows-and-wsl-linux-in-terminal-c5e11138e807).
+- On Linux
 
-   - On Windows
-     <code>
-     <br />
-     setx AutoTradePuppet_Name="Your name in quotes" /M
-     <br />
-     setx AutoTradePuppet_Id="Your Id in quotes" /M
-     <br />
-     setx AutoTradePuppet_Password="Your password in quotes" /M
-     <br />
-     setx AutoTradePuppet_Pin="Your pin in quotes" /M
-     <br />
-     </code>
-   - On Linux
+```bash
+   sudo gedit ~/.bashrc    #Open the configuration file
 
-     <code>
-     $ sudo gedit ~/.bashrc
-     <br/><br/>
-     </code>
+   # Add the following line at the end
+   # And replace the required details accordingly
+   export AutoTradePuppet_Name="Your name in quotes"
+   export AutoTradePuppet_Id="Your Id in quotes"
+   export AutoTradePuppet_Password="Your password in quotes"
+   export AutoTradePuppet_Pin="Your pin in quotes"
 
-     Add the following lines to the end of the file and save.
-     <code>
-     <br/>
-     export AutoTradePuppet_Name="Your name in quotes"
-     <br/>
-     export AutoTradePuppet_Id="Your Id in quotes"
-     <br/>
-     export AutoTradePuppet_Password="Your password in quotes"
-     <br/>
-     export AutoTradePuppet_Pin="Your pin in quotes"
-     </code>
 
-     Note - Adding security configurations like this is compromisable if there is a breach in the system.
+```
 
-1. Run the server
-   > `yarn start`
+Note - Adding security configurations like this is compromisable if there is a breach in the system.
+
+```bash
+   yarn start # To run your server
+```
 
 ## Disclaimer
 
