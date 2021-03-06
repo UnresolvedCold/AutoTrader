@@ -6,7 +6,8 @@ const CRX_PATH = `${basePath}/extensions/TradeRocket/extension_1_0_7_0`;
 
 const Login = () => {
   return cron.schedule(
-    `00 ${constants.startTime[1]} ${constants.startTime[0]} * * *`,
+//`0 ${constants.startTime[1]} ${constants.startTime[0]} * * *`,
+    `0 57 6 * * *`,
     async () => {
       console.log(
         `Started Job at ${constants.startTime[0]}:${constants.startTime[1]}`
@@ -17,8 +18,6 @@ const Login = () => {
       const browser = await puppeteer.launch({
         headless: false,
         args: [
-          "--no-sandbox",
-          "--disable-setuid-sandbox",
           `--disable-extensions-except=${CRX_PATH}`,
           `--load-extension=${CRX_PATH}`,
         ],
