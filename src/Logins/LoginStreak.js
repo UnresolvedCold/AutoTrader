@@ -3,11 +3,15 @@ const cron = require("node-cron");
 const puppeteer = require("puppeteer");
 const basePath = process.cwd();
 const CRX_PATH = `${basePath}/extensions/TradeRocket/extension_1_0_7_0`;
+require('dotenv').config();
 
 const Login = () => {
+  if(process.env.BROWSER_COUNT>0) return null;
+
+  process.env.BROWSER_COUNT++;
+
   return cron.schedule(
-//`0 ${constants.startTime[1]} ${constants.startTime[0]} * * *`,
-    `0 57 6 * * *`,
+    `0 ${constants.startTime[1]} ${constants.startTime[0]} * * *`,
     async () => {
       console.log(
         `Started Job at ${constants.startTime[0]}:${constants.startTime[1]}`

@@ -4,8 +4,8 @@ module.exports = {
   Password: process.env.AutoTradePuppet_Password || "Password", // change
   Pin: process.env.AutoTradePuppet_Pin || "123456", // change
 
-  startTime: [6, 32], // [hr, min]
-  endTime: [6, 38], // [hr, min]
+  startTime: [8, 21], // [hr, min]
+  endTime: [4, 0], // [hr, min]
   marketInterval: (s, e) => {
     var ti = (e[0] * 60 + e[1] - s[0] * 60 - s[1]) * 60 * 1000;
     return ti > 0 ? ti : 100000;
